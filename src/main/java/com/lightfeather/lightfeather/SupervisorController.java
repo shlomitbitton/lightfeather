@@ -34,8 +34,12 @@ public class SupervisorController {
     @PostMapping("/submit")
     public ResponseEntity<String> submitPersonalInformation(@RequestBody ManagerRequestDto personalInfo) {
 
-        supervisorService.submitPersonalInformation(personalInfo);
-        return ResponseEntity.ok("Personal information submitted successfully.");
+        if(supervisorService.submitPersonalInformation(personalInfo)){
+            return ResponseEntity.ok("Personal information submitted successfully.");
+        }else{
+            return ResponseEntity.badRequest().body("firstName,lastName, and supervisor are mandatory");
+        }
+
     }
 }
 
