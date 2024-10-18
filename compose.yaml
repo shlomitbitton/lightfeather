@@ -1,0 +1,14 @@
+name: lightfeather_code_challenge
+services:
+  service_name:
+    image: openjdk:17-jdk-slim
+    networks:
+      default: null
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./target:/app
+    command: [ "java", "-jar", "/app/lightfeather-0.0.1-SNAPSHOT.jar" ]
+networks:
+  default:
+    name: lightfeather_code_challenge_default
