@@ -1,4 +1,13 @@
-Please start project with docker compose.
+To start the project with docker:
+
+Build: **mvn clean install** 
+in terminal cd to: **compose.yaml** file 
+run the commnad: 
+
+**docker-compose -f compose.yaml up**
+
+
+
 Here are the requested endpoints:
 
 
